@@ -1,7 +1,4 @@
-rows = 10 
-columns = 10
-
-board = [[0 for i in range(columns)]for n in range(rows)]
+from Globals import board, rows, columns 
 
 #get valid user input for coordinates to play, return row and column 
 def getInput():
@@ -32,5 +29,3 @@ def makeInitialPlacements():
         row, column = getInput()
         makeMove(row, column)
         MakeAnotherMove = input("would you like to make another move? (y/n): ").upper()
-        
-makeInitialPlacements()
