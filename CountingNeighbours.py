@@ -1,6 +1,6 @@
 def CountingNeighbours(XCoord, YCoord, Board, rows, columns):
     Neighbours = 0
-    center = Board[XCoord][YCoord]
+    center = Board[YCoord][XCoord]
     # Checks if the X-bounds of the board are too close and adjusts the start counter and end counter of X accordingly
     if (XCoord > 0) and (XCoord < rows - 1):
         xMin = -1
@@ -28,7 +28,7 @@ def CountingNeighbours(XCoord, YCoord, Board, rows, columns):
     while x <= xMax:
         y = yMin
         while y <= yMax:
-            Neighbours = Neighbours + Board[XCoord + x][YCoord + y]
+            Neighbours = Neighbours + Board[YCoord + y][XCoord + x]
             y += 1
         x += 1
     Neighbours -= center # account for the cell itself
