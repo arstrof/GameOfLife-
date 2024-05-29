@@ -1,23 +1,26 @@
-from Test_for_Ars_CountingNeighbours import CountingNeighbours
+from CountingNeighbours import CountingNeighbours
 
 
 
 
 def UpdateBoard(board, YDimensions, XDimensions): #YDimensions is equivalent to rows, XDimensions is equivalent to cols
     
+    #print(f"Test for Counting neigbours {CountingNeighbours(1, 0, board, 3, 3)}")
 
     NewBoard = [[None for _ in range(XDimensions)] for _ in range(YDimensions)]
-    print(NewBoard)
+    
+    #print(NewBoard)
 
     counter = 0
 
     for YCoordinate in range(YDimensions):
         for XCoordinate in range(XDimensions):
             
-            
-            NumOfNeighbours = CountingNeighbours(XCoordinate, YCoordinate, board, rows=YDimensions, cols=XDimensions, counter=counter) #YDimensions is equivalent to rows, XDimensions is equivalent to cols
 
-            print(XCoordinate, YCoordinate)
+            
+            NumOfNeighbours = CountingNeighbours(XCoordinate, YCoordinate, board, YDimensions, XDimensions) #YDimensions is equivalent to rows, XDimensions is equivalent to cols
+
+            #print(XCoordinate, YCoordinate, NumOfNeighbours)
 
 
             if NumOfNeighbours <= 1 or NumOfNeighbours >= 4: #checking the solitude and overpopulation 
@@ -34,11 +37,11 @@ def UpdateBoard(board, YDimensions, XDimensions): #YDimensions is equivalent to 
             counter += 1
     return NewBoard
 
-board = [[0, 1, 0], [0, 1, 0], [0, 1, 0]]
+"""board = [[0, 1, 0], [0, 1, 0], [0, 1, 0]]
 
 print(UpdateBoard(board, 3, 3))
 
-
+"""
     
 
     

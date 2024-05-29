@@ -1,6 +1,6 @@
 from Globals import board, columns, rows
 
-def printBoard():
+def printBoard(board):
 
     print('   ', end='')
     for i in range(columns):
